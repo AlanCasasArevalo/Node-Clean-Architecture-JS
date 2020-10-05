@@ -1,0 +1,23 @@
+{
+  "name": "node-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/server.js",
+    "develop": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "stylus": "0.54.5",
+    "body-parser": "^1.19.0",
+    "mongodb": "^3.6.2"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.2.4",
+    "sucrase": "^3.15.0",
+    "nodemon": "^2.0.4"
+  }
+}
