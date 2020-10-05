@@ -1,10 +1,13 @@
 const express = require('express');
-const router = express.Router();
 const fg = require('fast-glob')
 
 module.exports = (app) => {
-  app.use('/', router)
-  fg.sync('**/src/routes/**routes.js').map(async file => {
-    (await require(`../routes/${file}`)).default(router)
-  })
+    const router = express.Router();
+    app.use('/', router)
+    const routesArray = fg.sync('**/src/routes/**routes.js')
+    console.log('', routesArray)
+
+    routesArray.map(async file => {
+        (await require(`../../${file}`))(router)
+    })
 }
